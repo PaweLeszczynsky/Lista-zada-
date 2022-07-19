@@ -1,14 +1,43 @@
 {
 
-const tasks = [];
+    const tasks = [
+        
+    ];
 
-const onFormSubmit = (event) =>{
-    event.preventDefault();
-    const addNewTask = document.querySelector(".js-mainSection__section__addTask").value.trim();
-}
-    const init = () =>{
-        const addTaskForm = document.querySelector(".js-mainSection__section__addTaskForm");
-        addTaskForm.addEventlistener("submit", onFormSubmit);
+    renderTaskList = () => {
+        
+        let newPosition="";
+        for (const task of tasks) {
+            newPosition += `
+            <li>${task.content}</li>
+            `;
+        }
+        document.querySelector(".js-mainSection__section__taskList").innerHTML = newPosition;
     }
+
+    const addNewTask = (newTask) => {
+        tasks.push({
+            content: newTask,
+            status: false,
+
+        });
+        renderTaskList();
+    }
+
+    const onFormSubmit = (event) => {
+        event.preventDefault();
+        const newTask = document.querySelector(".js-mainSection__section__addTask").value.trim();
+        if (newTask === "") {
+            return;
+        }
+        addNewTask(newTask); 
+    }
+
+    const init = () => {
+        renderTaskList();
+        const form = document.querySelector(".js-mainSection__section__addTaskForm");
+        form.addEventListener("submit", onFormSubmit);
+
+    };
     init();
 }

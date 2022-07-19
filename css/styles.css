@@ -68,3 +68,6 @@ html {
     background-color: turquoise;
     cursor: pointer;
 }
+.mainSection__section__taskListItem{
+    margin: 10px;
+}

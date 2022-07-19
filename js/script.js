@@ -9,7 +9,7 @@
         let newPosition="";
         for (const task of tasks) {
             newPosition += `
-            <li>${task.content}</li>
+            <li class="mainSection__section__taskListItem">${task.content}</li>
             `;
         }
         document.querySelector(".js-mainSection__section__taskList").innerHTML = newPosition;

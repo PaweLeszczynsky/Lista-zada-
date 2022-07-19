@@ -1,0 +1,70 @@
+html {
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+*, ::after, ::before {
+    box-sizing: inherit;
+}
+
+.mainSection{
+    background-color: rgb(181, 255, 248);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 50px 0;
+}
+.mainSection__websiteName{
+    background-color: aliceblue;
+    min-width: 80%;
+    border-radius: 50px;
+    font-size: 30px;
+    font-weight: 600;
+    padding: 20px;
+    margin: 50px 20px 0;
+    text-align: center;
+    
+}
+.mainSection__section{
+    background-color: aliceblue;
+    min-width: 80%;
+    border-radius: 50px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin:0 20px;
+}
+.mainSection__section__header{
+    font-size: 20px;
+    font-weight: 500;
+    border-bottom: 2px solid black;
+    max-width: 80%;
+}
+.mainSection__section__addTaskForm{
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+   justify-content: center;
+    
+}
+.mainSection__section__addTaskField{
+    padding: 10px;
+    border: 2px solid black;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+.mainSection__section__addTaskButton{
+    padding: 10px;
+    border: 2px solid black;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-left: -2px;
+    background-color: rgb(181, 255, 248);
+}
+.mainSection__section__addTaskButton:hover{
+    background-color: turquoise;
+    cursor: pointer;
+}

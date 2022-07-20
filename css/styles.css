@@ -84,7 +84,10 @@ html {
     min-width: 300px;
     background-color: aquamarine;
 }
-
+.mainSection__section__taskList__icon{
+    align-items: center;
+    background-color: transparent;
+}
 
 .mainSection__section__taskList__checkedButton{
     padding: 5px;

@@ -102,6 +102,7 @@ html {
 .mainSection__section__taskList__checkedButton {
     padding: 5px;
     background-color: green;
+    color: white;
     border: none;
     width: 30px;
     height: 30px;
@@ -109,9 +110,29 @@ html {
     justify-content: center;
     align-items: center;
 }
-.mainSection__section__taskList__deleteTask{
+
+.mainSection__section__taskList__deleteTask {
     padding: 5px;
-    background-color: greenyellow;
+    background-color: red;
+    color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainSection__section__taskList__deleteTask:hover {
+    cursor: pointer;
+}
+.mainSection__section__taskList__checkedButton:hover{
+    cursor: pointer;
+}
+.mainSection__section__taskList__icon:hover{
+    width: 30px;
+    height: 30px;
+    transition: 1s;
 }
 .mainSection__section__taskList__checkedButton__icon {
     height: 20px;

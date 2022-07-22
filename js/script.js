@@ -35,6 +35,17 @@
 
         });
         renderTaskList();
+        resetformfield();
+        focusTaskInput();
+    }
+
+    const focusTaskInput = () => {
+        const focusNewTask = document.querySelector(".js-mainSection__section__addTask");
+        focusNewTask.focus();
+    }
+    const resetformfield = () => {
+        const form = document.querySelector(".js-mainSection__section__addTaskForm");
+        form.reset();
     }
 
     const onFormSubmit = (event) => {
@@ -44,6 +55,7 @@
             return;
         }
         addNewTask(newTask);
+
     }
 
     const init = () => {

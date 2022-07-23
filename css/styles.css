@@ -82,6 +82,7 @@ html {
     min-width: 100%;
     padding: 10px 0;
     font-weight: 300;
+    word-break: break-word;
 }
 
 .mainSection__section__taskListItem {
@@ -91,7 +92,6 @@ html {
     grid-template-columns: auto 1fr auto;
     gap: 10px;
     align-items: center;
-    min-width: 300px;
     border-bottom: 2px solid rgb(221, 221, 221);
     padding: 10px 10px;
 }

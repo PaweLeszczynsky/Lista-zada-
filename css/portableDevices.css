@@ -1,10 +1,6 @@
-@media (max-width: 600px) {
+@media (max-width:600px) {
     .mainSection__section__addTaskForm {
         gap: 10px;
-        margin-bottom: 20px;
-        display: flex;
         flex-direction: column;
-        padding: 0 20px;
-        
     }
 }

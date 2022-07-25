@@ -7,8 +7,16 @@
 
         let newPosition = "";
         for (const task of tasks) {
-            newPosition += `
-            <li ${task.status ? "style=\"text-decoration: line-through\"" : ""} class="mainSection__section__taskListItem"><button class="mainSection__section__taskList__checkedButton js-mainSection__section__taskList__checkedButton">${task.status ? `<ion-icon class="mainSection__section__taskList__icon" name="checkmark-outline"></ion-icon>` : ""}</button>${task.content}<button class="mainSection__section__taskList__deleteTask js-mainSection__section__taskList__deleteTask"><ion-icon class="mainSection__section__taskList__icon" name="trash-outline"></ion-icon></button></li>
+            newPosition += 
+            `
+            <li class="mainSection__section__taskListItem ${task.status ? "mainSection__section__taskListItem--done" : ""}">
+                <button class="mainSection__section__taskList__checkedButton js-mainSection__section__taskList__checkedButton">
+                    ${task.status ? `<ion-icon class="mainSection__section__taskList__icon" name="checkmark-outline"></ion-icon>` : ""}
+                </button>
+                    ${task.content}
+                <button class="mainSection__section__taskList__deleteTask js-mainSection__section__taskList__deleteTask"><ion-icon class="mainSection__section__taskList__icon" name="trash-outline"></ion-icon>
+                </button>
+            </li>
             `;
         }
         document.querySelector(".js-mainSection__section__taskList").innerHTML = newPosition;
@@ -36,7 +44,6 @@
         });
         renderTaskList();
         resetformfield();
-        focusTaskInput();
     }
 
     const focusTaskInput = () => {
@@ -52,16 +59,15 @@
         event.preventDefault();
         const newTask = document.querySelector(".js-mainSection__section__addTask").value.trim();
         if (newTask === "") {
-            return;
+            focusTaskInput();
+            return
         }
         addNewTask(newTask);
-
     }
 
     const init = () => {
         const form = document.querySelector(".js-mainSection__section__addTaskForm");
         form.addEventListener("submit", onFormSubmit);
-
     };
     init();
 }

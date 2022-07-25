@@ -100,7 +100,9 @@ html {
     border-bottom: 2px solid rgb(221, 221, 221);
     padding: 10px 10px;
 }
-
+.mainSection__section__taskListItem--done{
+    text-decoration: line-through;
+}
 .mainSection__section__taskList__icon {
     align-items: center;
     background-color: transparent;
@@ -137,7 +139,14 @@ html {
 .mainSection__section__taskList__checkedButton:hover {
     cursor: pointer;
 }
-
+.mainSection__section__taskList__checkedButton:active{
+    outline: 2px solid black;
+    border-radius: 2px;
+}
+.mainSection__section__taskList__deleteTask:active {
+    outline: 2px solid black;
+    border-radius: 2px;
+}
 .mainSection__section__taskList__icon:hover {
     width: 30px;
     height: 30px;

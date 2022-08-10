@@ -31,7 +31,7 @@ html {
     text-align: left;
 }
 
-.mainSection__section {
+.section {
     background-color: white;
     min-width: 70%;
     display: flex;
@@ -41,7 +41,7 @@ html {
     margin: 0 20px;
 }
 
-.mainSection__section__header {
+.section__header {
     font-size: 20px;
     font-weight: 600;
     border-bottom: 1px solid rgb(221, 221, 221);
@@ -50,7 +50,7 @@ html {
     margin: 0;
 }
 
-.mainSection__section__addTaskForm {
+.addTaskForm {
     margin-bottom: 20px;
     display: flex;
     flex-wrap: wrap;
@@ -61,14 +61,14 @@ html {
 
 }
 
-.mainSection__section__addTaskField {
+.addTaskForm__addTaskInput {
     padding: 10px;
     border: 2px solid rgb(221, 221, 221);
     font-weight: 300;
     flex-grow: 1;
 }
 
-.mainSection__section__addTaskButton {
+.addTaskForm__addTaskButton {
     padding: 10px;
     background-color: teal;
     border: none;
@@ -76,12 +76,12 @@ html {
     font-weight: 300;
 }
 
-.mainSection__section__addTaskButton:hover {
+.addTaskForm__addTaskButton:hover {
     background-color: turquoise;
     cursor: pointer;
 }
 
-.mainSection__section__taskList {
+.section__taskList {
     list-style: none;
     margin: 0;
     display: flex;
@@ -92,7 +92,7 @@ html {
     word-break: break-word;
 }
 
-.mainSection__section__taskListItem {
+.section__taskListItem {
     margin: 0 20px;
     margin-bottom: 20px;
     display: grid;
@@ -102,15 +102,15 @@ html {
     border-bottom: 2px solid rgb(221, 221, 221);
     padding: 10px 10px;
 }
-.mainSection__section__taskListItem--done{
+.section__taskListItem--done{
     text-decoration: line-through;
 }
-.mainSection__section__taskList__icon {
+.section__taskList__icon {
     align-items: center;
     background-color: transparent;
 }
 
-.mainSection__section__taskList__checkedButton {
+.section__taskList__checkedButton {
     padding: 5px;
     background-color: green;
     color: white;
@@ -122,7 +122,7 @@ html {
     align-items: center;
 }
 
-.mainSection__section__taskList__deleteTask {
+.section__taskList__deleteTask {
     padding: 5px;
     background-color: red;
     color: white;
@@ -134,28 +134,28 @@ html {
     align-items: center;
 }
 
-.mainSection__section__taskList__deleteTask:hover {
+.section__taskList__deleteTask:hover {
     cursor: pointer;
 }
 
-.mainSection__section__taskList__checkedButton:hover {
+.section__taskList__checkedButton:hover {
     cursor: pointer;
 }
-.mainSection__section__taskList__checkedButton:active{
+.section__taskList__checkedButton:active{
     outline: 2px solid black;
     border-radius: 2px;
 }
-.mainSection__section__taskList__deleteTask:active {
+.section__taskList__deleteTask:active {
     outline: 2px solid black;
     border-radius: 2px;
 }
-.mainSection__section__taskList__icon:hover {
+.section__taskList__icon:hover {
     width: 30px;
     height: 30px;
     transition: 1s;
 }
 
-.mainSection__section__taskList__checkedButton__icon {
+.section__taskList__checkedButton__icon {
     height: 20px;
     width: 20px;
 }

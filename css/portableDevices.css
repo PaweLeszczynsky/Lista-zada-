@@ -1,5 +1,5 @@
 @media (max-width:600px) {
-    .mainSection__section__addTaskForm {
+    .section__addTaskForm {
         gap: 10px;
         flex-direction: column;
     }

@@ -74,11 +74,13 @@ html {
     border: none;
     color: white;
     font-weight: 300;
+    transition: background 1s, transform 1s;
 }
 
 .addTaskForm__addTaskButton:hover {
     background-color: turquoise;
     cursor: pointer;
+    transform: scale(1.15);
 }
 
 .section__taskList {
@@ -108,6 +110,7 @@ html {
 .section__taskList__icon {
     align-items: center;
     background-color: transparent;
+    transition: 1s;
 }
 
 .section__taskList__checkedButton {
@@ -120,6 +123,7 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: 1s;
 }
 
 .section__taskList__deleteTask {
@@ -132,13 +136,16 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: 1s;
 }
 
 .section__taskList__deleteTask:hover {
+    background-color: hsl(0, 100%, 30%);
     cursor: pointer;
 }
 
 .section__taskList__checkedButton:hover {
+    background-color: hsl(120, 100%, 20%);
     cursor: pointer;
 }
 .section__taskList__checkedButton:active{
@@ -150,9 +157,7 @@ html {
     border-radius: 2px;
 }
 .section__taskList__icon:hover {
-    width: 30px;
-    height: 30px;
-    transition: 1s;
+    transform: scale(1.4);
 }
 
 .section__taskList__checkedButton__icon {

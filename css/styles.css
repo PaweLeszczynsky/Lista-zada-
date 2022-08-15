@@ -49,22 +49,18 @@ html {
     flex-grow: 1;
 }
 
-.section__toggleViewTasksButton {
+.section__tasksInteractionButton {
     border: none;
     background-color: transparent;
     color: teal;
     font-weight: 300;
     font-size: 17px;
+    transition: 1s;
 }
-
-.section__setDoneAllTasksButton {
-    border: none;
-    background-color: transparent;
-    color: teal;
-    font-weight: 300;
-    font-size: 17px;
+.section__tasksInteractionButton:hover{
+    color: turquoise;
+    cursor: pointer;
 }
-
 .section__header {
     font-size: 20px;
     font-weight: 600;

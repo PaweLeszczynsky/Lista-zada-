@@ -11,4 +11,7 @@
     .addTaskForm__addTaskButton:hover {
         transform: scaleY(1.15) scaleX(1.05);
     }
+    .section__tasksInteractionButton {
+        align-self: center;
+    }
 }

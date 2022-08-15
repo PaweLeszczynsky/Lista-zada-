@@ -41,6 +41,30 @@ html {
     margin: 0 20px;
 }
 
+.section__header--taskList {
+    display: flex;
+}
+
+.section__header__text {
+    flex-grow: 1;
+}
+
+.section__toggleViewTasksButton {
+    border: none;
+    background-color: transparent;
+    color: teal;
+    font-weight: 300;
+    font-size: 17px;
+}
+
+.section__setDoneAllTasksButton {
+    border: none;
+    background-color: transparent;
+    color: teal;
+    font-weight: 300;
+    font-size: 17px;
+}
+
 .section__header {
     font-size: 20px;
     font-weight: 600;
@@ -104,9 +128,11 @@ html {
     border-bottom: 2px solid rgb(221, 221, 221);
     padding: 10px 10px;
 }
-.section__taskListItem--done{
+
+.section__taskListItem--done {
     text-decoration: line-through;
 }
+
 .section__taskList__icon {
     align-items: center;
     background-color: transparent;
@@ -148,14 +174,17 @@ html {
     background-color: hsl(120, 100%, 20%);
     cursor: pointer;
 }
-.section__taskList__checkedButton:active{
+
+.section__taskList__checkedButton:active {
     outline: 2px solid black;
     border-radius: 2px;
 }
+
 .section__taskList__deleteTask:active {
     outline: 2px solid black;
     border-radius: 2px;
 }
+
 .section__taskList__icon:hover {
     transform: scale(1.4);
 }

@@ -1,6 +1,14 @@
-@media (max-width:600px) {
+@media (max-width:750px) {
     .addTaskForm {
         gap: 10px;
         flex-direction: column;
+    }
+    .section__header--taskList {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .addTaskForm__addTaskButton:hover {
+        transform: scaleY(1.15) scaleX(1.05);
     }
 }

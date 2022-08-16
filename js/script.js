@@ -1,6 +1,7 @@
 {
-    const tasks = [];
-    renderTaskList = () => {
+    let tasks = [];
+    let hideDoneTasks = false;
+    const renderTaskList = () => {
         let newPosition = "";
         for (const task of tasks) {
             newPosition +=
@@ -18,12 +19,28 @@
         document.querySelector(".js-section__taskList").innerHTML = newPosition;
         bindEvents();
     }
+    const isArrayEmpty = (array) => {
+        return array.length === 0 ? true : false;
+    };
+
+    const renderButtons = () => {
+        let arrayEmpty = isArrayEmpty(tasks);
+
+        let addButtons =
+            `
+        <span class="section__header__text">Lista zadań</span>
+        <button class="${arrayEmpty === false ? "section__tasksInteractionButton" : "section__tasksInteractionButton--hidden"}">Ukryj ukończone</button>
+        <button class="${arrayEmpty === false ? "section__tasksInteractionButton" : "section__tasksInteractionButton--hidden"}">Ukończ wszystkie</button>
+        `;
+        document.querySelector(".js-section__header").innerHTML = addButtons;
+    };
     const bindEvents = () => {
         const removeButtons = document.querySelectorAll(".js-section__taskList__deleteTask");
         removeButtons.forEach((removeButton, index) => {
             removeButton.addEventListener("click", () => {
                 tasks.splice(index, 1)
                 renderTaskList();
+                renderButtons();
             });
         });
         const statusTaskButtons = document.querySelectorAll(".js-section__taskList__checkedButton");
@@ -31,15 +48,24 @@
             statusTaskButton.addEventListener("click", () => {
                 tasks[index].status = !tasks[index].status;
                 renderTaskList();
+                renderButtons();
             });
         });
     }
     const addNewTask = (newTask) => {
-        tasks.push({
-            content: newTask,
-            status: false,
-        });
+        tasks = [
+            ...tasks,
+            {
+                content: newTask,
+                status: false,
+            },
+        ];
+        // tasks.push({
+        //     content: newTask,
+        //     status: false,
+        // });
         renderTaskList();
+        renderButtons();
         resetformfield();
     }
     const focusTaskInput = () => {
@@ -52,6 +78,7 @@
     }
     const onFormSubmit = (event) => {
         event.preventDefault();
+        renderButtons();
         const newTask = document.querySelector(".js-addTaskForm__addTaskInput").value.trim();
         if (newTask === "") {
             focusTaskInput();

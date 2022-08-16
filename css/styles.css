@@ -57,6 +57,9 @@ html {
     font-size: 17px;
     transition: 1s;
 }
+.section__tasksInteractionButton--hidden{
+    display: none;
+}
 .section__tasksInteractionButton:hover{
     color: turquoise;
     cursor: pointer;

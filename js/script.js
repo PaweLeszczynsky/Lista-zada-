@@ -38,7 +38,10 @@
         const removeButtons = document.querySelectorAll(".js-section__taskList__deleteTask");
         removeButtons.forEach((removeButton, index) => {
             removeButton.addEventListener("click", () => {
-                tasks.splice(index, 1)
+                tasks = [
+                    ...tasks.slice(0, index),
+                    ...tasks.slice(index+1),
+                ];
                 renderTaskList();
                 renderButtons();
             });
@@ -60,10 +63,6 @@
                 status: false,
             },
         ];
-        // tasks.push({
-        //     content: newTask,
-        //     status: false,
-        // });
         renderTaskList();
         renderButtons();
         resetformfield();

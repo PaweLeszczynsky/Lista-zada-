@@ -25,22 +25,28 @@
 
     const renderButtons = () => {
         let arrayEmpty = isArrayEmpty(tasks);
-
+        let allTasksDone = checkAllTasksDone(tasks);
         let addButtons =
             `
         <span class="section__header__text">Lista zadań</span>
         <button class="${arrayEmpty === false ? "section__tasksInteractionButton" : "section__tasksInteractionButton--hidden"}">Ukryj ukończone</button>
-        <button class="${arrayEmpty === false ? "section__tasksInteractionButton" : "section__tasksInteractionButton--hidden"}">Ukończ wszystkie</button>
+        <button ${allTasksDone === true ? "disabled" : ""} class="${arrayEmpty === false ? "section__tasksInteractionButton" : "section__tasksInteractionButton--hidden"}">Ukończ wszystkie</button>
         `;
         document.querySelector(".js-section__header").innerHTML = addButtons;
     };
+
+    const checkAllTasksDone = (array) => {
+        const filtrDoneTasks = tasks.filter(({ status }) => status);
+        return array.length === filtrDoneTasks.length ? true : false;
+    };
+
     const bindEvents = () => {
         const removeButtons = document.querySelectorAll(".js-section__taskList__deleteTask");
         removeButtons.forEach((removeButton, index) => {
             removeButton.addEventListener("click", () => {
                 tasks = [
                     ...tasks.slice(0, index),
-                    ...tasks.slice(index+1),
+                    ...tasks.slice(index + 1),
                 ];
                 renderTaskList();
                 renderButtons();
@@ -51,8 +57,8 @@
             statusTaskButton.addEventListener("click", () => {
                 tasks = [
                     ...tasks.slice(0, index),
-                    {...tasks[index], status:!tasks[index].status},
-                    ...tasks.slice(index+1),
+                    { ...tasks[index], status: !tasks[index].status },
+                    ...tasks.slice(index + 1),
 
                 ];
                 renderTaskList();

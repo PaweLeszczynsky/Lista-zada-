@@ -49,7 +49,12 @@
         const statusTaskButtons = document.querySelectorAll(".js-section__taskList__checkedButton");
         statusTaskButtons.forEach((statusTaskButton, index) => {
             statusTaskButton.addEventListener("click", () => {
-                tasks[index].status = !tasks[index].status;
+                tasks = [
+                    ...tasks.slice(0, index),
+                    {...tasks[index], status:!tasks[index].status},
+                    ...tasks.slice(index+1),
+
+                ];
                 renderTaskList();
                 renderButtons();
             });

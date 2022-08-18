@@ -193,3 +193,6 @@ html {
     height: 20px;
     width: 20px;
 }
+.section__tasksInteractionButton:disabled{
+    color:grey;
+};

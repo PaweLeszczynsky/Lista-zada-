@@ -132,7 +132,9 @@ html {
 .section__taskListItem--done {
     text-decoration: line-through;
 }
-
+.section__taskListItem--hidden{
+    display: none;
+};
 .section__taskList__icon {
     align-items: center;
     background-color: transparent;

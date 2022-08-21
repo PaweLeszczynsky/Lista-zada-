@@ -70,12 +70,10 @@
 
         setTasksDoneButton.addEventListener("click", () => {
 
-            tasks = tasks.map(obj => {
-                if (obj.status === false) {
-                    return { ...obj, status: true };
-                }
-                return obj;
-            });
+            tasks = tasks.map(array => ({
+                ...array,
+                status:true,
+            }));
 
             render();
         });

@@ -6,6 +6,7 @@
         renderButtons();
         bindEvents();
     };
+
     const renderTaskList = () => {
         let newPosition = "";
         for (const task of tasks) {
@@ -22,8 +23,8 @@
                 `;
         }
         document.querySelector(".js-section__taskList").innerHTML = newPosition;
-
     }
+
     const renderButtons = () => {
         let arrayEmpty = isArrayEmpty(tasks);
         let allTasksDone = checkAllTasksDone(tasks);
@@ -35,56 +36,71 @@
         `;
         document.querySelector(".js-section__header").innerHTML = addButtons;
     };
+
     const isArrayEmpty = (array) => {
         return array.length === 0 ? true : false;
     };
+
     const checkAllTasksDone = (array) => {
         const filtrDoneTasks = tasks.filter(({ status }) => status);
         return array.length === filtrDoneTasks.length ? true : false;
+    };
+
+    const removeTask = (index) => {
+        tasks = [
+            ...tasks.slice(0, index),
+            ...tasks.slice(index + 1),
+        ];
+        render();
+    };
+
+    const changeStatusTask = (index) => {
+        tasks = [
+            ...tasks.slice(0, index),
+            { ...tasks[index], status: !tasks[index].status },
+            ...tasks.slice(index + 1),
+        ];
+        render();
+    };
+
+    const setAllTasksDone = () => {
+        tasks = tasks.map(array => ({
+            ...array,
+            status: true,
+        }));
+        render();
+    };
+
+    const changeHideDoneTasksValue = () => {
+        hideDoneTasks = !hideDoneTasks;
+        render();
     };
 
     const bindEvents = () => {
         const removeButtons = document.querySelectorAll(".js-section__taskList__deleteTask");
         removeButtons.forEach((removeButton, index) => {
             removeButton.addEventListener("click", () => {
-                tasks = [
-                    ...tasks.slice(0, index),
-                    ...tasks.slice(index + 1),
-                ];
-                render();
+                removeTask(index);
             });
         });
         const statusTaskButtons = document.querySelectorAll(".js-section__taskList__checkedButton");
         statusTaskButtons.forEach((statusTaskButton, index) => {
             statusTaskButton.addEventListener("click", () => {
-                tasks = [
-                    ...tasks.slice(0, index),
-                    { ...tasks[index], status: !tasks[index].status },
-                    ...tasks.slice(index + 1),
-
-                ];
-                render();
+                changeStatusTask(index);
             });
         });
         const setTasksDoneButton = document.querySelector(".js-section__setTasksDoneButton");
-
         setTasksDoneButton.addEventListener("click", () => {
-
-            tasks = tasks.map(array => ({
-                ...array,
-                status: true,
-            }));
-
-            render();
+            setAllTasksDone();
         });
         const toggleTasksViewButton = document.querySelector(".js-section__toggleTasksViewButton");
-        if ((tasks.some(({ status }) => status))===true) {
+        if ((tasks.some(({ status }) => status)) === true) {
             toggleTasksViewButton.addEventListener("click", () => {
-                hideDoneTasks = !hideDoneTasks;
-                render();
+                changeHideDoneTasksValue();
             });
         };
     }
+
     const addNewTask = (newTask) => {
         tasks = [
             ...tasks,
@@ -96,14 +112,17 @@
         render();
         resetformfield();
     }
+
     const focusTaskInput = () => {
         const focusNewTask = document.querySelector(".js-addTaskForm__addTaskInput");
         focusNewTask.focus();
     }
+
     const resetformfield = () => {
         const form = document.querySelector(".js-addTaskForm");
         form.reset();
     }
+
     const onFormSubmit = (event) => {
         event.preventDefault();
         render();
@@ -114,6 +133,7 @@
         }
         addNewTask(newTask);
     }
+
     const init = () => {
         const form = document.querySelector(".js-addTaskForm");
         form.addEventListener("submit", onFormSubmit);

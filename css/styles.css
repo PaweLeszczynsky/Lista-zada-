@@ -57,10 +57,12 @@ html {
     font-size: 17px;
     transition: 1s;
 }
-.section__tasksInteractionButton--hidden{
+
+.section__tasksInteractionButton--hidden {
     display: none;
 }
-.section__tasksInteractionButton:hover{
+
+.section__tasksInteractionButton:hover {
     color: turquoise;
     cursor: pointer;
 }
@@ -132,13 +134,19 @@ html {
 .section__taskListItem--done {
     text-decoration: line-through;
 }
-.section__taskListItem--hidden{
+
+.section__taskListItem--hidden {
     display: none;
-};
+}
+
 .section__taskList__icon {
     align-items: center;
     background-color: transparent;
-    transition: 1s;
+    transition: transform 1s;
+}
+
+.section__taskList__icon:hover {
+    transform: scale(1.4);
 }
 
 .section__taskList__checkedButton {
@@ -187,14 +195,8 @@ html {
     border-radius: 2px;
 }
 
-.section__taskList__icon:hover {
-    transform: scale(1.4);
+.section__tasksInteractionButton:disabled {
+    color: grey;
 }
 
-.section__taskList__checkedButton__icon {
-    height: 20px;
-    width: 20px;
-}
-.section__tasksInteractionButton:disabled{
-    color:grey;
-};
+;

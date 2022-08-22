@@ -8,6 +8,7 @@ The application allows to prepare a list of tasks to perform. After adding tasks
 
 ![App after mark tasks](https://github.com/PaweLeszczynsky/Lista-zadan/blob/main/images/preview2.png?raw=true)
 
+Link to [App video presentation](https://youtu.be/Quk2O5OzMS8)
 ## Used technologies
 
 - HTML

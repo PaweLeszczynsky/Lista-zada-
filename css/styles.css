@@ -43,10 +43,7 @@ html {
 
 .section__header--taskList {
     display: flex;
-}
-
-.section__header__text {
-    flex-grow: 1;
+    justify-content: space-between;
 }
 
 .section__tasksInteractionButton {
@@ -56,10 +53,6 @@ html {
     font-weight: 300;
     font-size: 17px;
     transition: 1s;
-}
-
-.section__tasksInteractionButton--hidden {
-    display: none;
 }
 
 .section__tasksInteractionButton:hover {

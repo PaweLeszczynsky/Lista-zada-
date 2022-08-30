@@ -3,15 +3,24 @@
         gap: 10px;
         flex-direction: column;
     }
+
     .section__header--taskList {
         display: flex;
         flex-direction: column;
         gap: 10px;
     }
+
     .addTaskForm__addTaskButton:hover {
         transform: scaleY(1.15) scaleX(1.05);
     }
+
     .section__tasksInteractionButton {
         align-self: center;
+    }
+
+    .section__interactionButtonsContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
     }
 }

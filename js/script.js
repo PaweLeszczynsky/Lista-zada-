@@ -28,13 +28,19 @@
     const renderButtons = () => {
         let arrayEmpty = isArrayEmpty(tasks);
         let allTasksDone = checkAllTasksDone(tasks);
-        let addButtons =
-            `
-        <span class="section__header__text">Lista zadań</span>
-        <button class="js-section__toggleTasksViewButton ${arrayEmpty === false ? "section__tasksInteractionButton" : "section__tasksInteractionButton--hidden"}">${hideDoneTasks ? "Pokaż ukończone" : "Ukryj ukończone"}</button>
-        <button ${allTasksDone === true ? "disabled" : ""} class="js-section__setTasksDoneButton ${arrayEmpty === false ? "section__tasksInteractionButton" : "section__tasksInteractionButton--hidden"}">Ukończ wszystkie</button>
+        let tasksInteractionButtons = "";
+        if (!arrayEmpty) {
+            tasksInteractionButtons =
+                `
+        <button class="js-section__toggleTasksViewButton section__tasksInteractionButton">
+        ${hideDoneTasks ? "Pokaż ukończone" : "Ukryj ukończone"}
+        </button>
+        <button ${allTasksDone === true ? "disabled" : ""} class="js-section__setTasksDoneButton section__tasksInteractionButton">
+        Ukończ wszystkie
+        </button>
         `;
-        document.querySelector(".js-section__header").innerHTML = addButtons;
+        };
+        document.querySelector(".js-section__interactionButtonsContainer").innerHTML = tasksInteractionButtons;
     };
 
     const isArrayEmpty = (array) => {
@@ -90,9 +96,11 @@
             });
         });
         const setTasksDoneButton = document.querySelector(".js-section__setTasksDoneButton");
-        setTasksDoneButton.addEventListener("click", () => {
-            setAllTasksDone();
-        });
+        if (setTasksDoneButton !== null) {
+            setTasksDoneButton.addEventListener("click", () => {
+                setAllTasksDone();
+            });
+        };
         const toggleTasksViewButton = document.querySelector(".js-section__toggleTasksViewButton");
         if ((tasks.some(({ status }) => status)) === true) {
             toggleTasksViewButton.addEventListener("click", () => {
